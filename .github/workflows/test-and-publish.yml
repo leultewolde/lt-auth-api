@@ -59,19 +59,24 @@ jobs:
       - name: Build Package
         run: npm run build
 
-#      - name: Configure NPM Auth
-#        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Configure NPM Auth
+        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Debug Token Usage
         run: echo $NODE_AUTH_TOKEN | wc -c
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Debug Token Usage
+        run: echo $NODE_AUTH_TOKEN
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       # Publish to NPM
       - name: Publish to NPM
-        run: npm publish --provenance --access public
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
