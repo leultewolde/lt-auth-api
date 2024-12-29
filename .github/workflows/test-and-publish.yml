@@ -55,22 +55,17 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Bump Package Version
+        run: npm version patch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # Run build
       - name: Build Package
         run: npm run build
 
       - name: Configure NPM Auth
         run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Debug Token Usage
-        run: echo $NODE_AUTH_TOKEN | wc -c
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Debug Token Usage
-        run: echo $NODE_AUTH_TOKEN
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
