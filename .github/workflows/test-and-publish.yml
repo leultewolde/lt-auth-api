@@ -59,6 +59,11 @@ jobs:
       - name: Build Package
         run: npm run build
 
+      - name: Debug Token Usage
+        run: echo $NODE_AUTH_TOKEN | wc -c
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       # Publish to NPM
       - name: Publish to NPM
         run: npm publish
