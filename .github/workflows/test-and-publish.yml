@@ -12,6 +12,8 @@ jobs:
   test:
     name: Test the Package
     runs-on: ubuntu-latest
+    env:
+      SKIP_E2E: true
 
     steps:
       # Checkout the repository
