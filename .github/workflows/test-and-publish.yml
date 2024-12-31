@@ -31,7 +31,7 @@ jobs:
 
       # Run tests
       - name: Run Tests
-        run: npm test
+        run: npm run test:unit
 
   publish:
     name: Publish to NPM

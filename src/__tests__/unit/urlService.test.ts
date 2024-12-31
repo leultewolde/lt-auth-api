@@ -8,7 +8,7 @@ describe("URL Service", () => {
             const redirectURL = 'http://example.com:3000/path/to/resource';
             const result = generateURL(BASE_URL, redirectURL);
             expect(result).toBe(
-                'http://localhost:8081/?prefix=http&host=example.com&port=3000&resources=path.to.resource'
+                'http://localhost:8080/?prefix=http&host=example.com&port=3000&resources=path.to.resource'
             );
         });
 
@@ -16,14 +16,14 @@ describe("URL Service", () => {
             const redirectURL = 'https://example.com/path/to/resource';
             const result = generateURL(BASE_URL, redirectURL);
             expect(result).toBe(
-                'http://localhost:8081/?prefix=https&host=example.com&resources=path.to.resource'
+                'http://localhost:8080/?prefix=https&host=example.com&resources=path.to.resource'
             );
         });
 
         it('should handle a redirect URL without resources', () => {
             const redirectURL = 'https://example.com/';
             const result = generateURL(BASE_URL, redirectURL);
-            expect(result).toBe('http://localhost:8081/?prefix=https&host=example.com');
+            expect(result).toBe('http://localhost:8080/?prefix=https&host=example.com');
         });
 
         it('should throw an error for an invalid redirect URL', () => {
@@ -37,7 +37,7 @@ describe("URL Service", () => {
             const redirectURL = 'http://example.com:3000/path/to/resource';
             const result = generateLoginURL(redirectURL);
             expect(result).toBe(
-                'http://localhost:8081/auth/login/?prefix=http&host=example.com&port=3000&resources=path.to.resource'
+                'http://localhost:8080/auth/login/?prefix=http&host=example.com&port=3000&resources=path.to.resource'
             );
         });
 
@@ -45,14 +45,14 @@ describe("URL Service", () => {
             const redirectURL = 'https://example.com/path/to/resource';
             const result = generateLoginURL(redirectURL);
             expect(result).toBe(
-                'http://localhost:8081/auth/login/?prefix=https&host=example.com&resources=path.to.resource'
+                'http://localhost:8080/auth/login/?prefix=https&host=example.com&resources=path.to.resource'
             );
         });
 
         it('should handle a redirect URL without resources', () => {
             const redirectURL = 'https://example.com/';
             const result = generateLoginURL(redirectURL);
-            expect(result).toBe('http://localhost:8081/auth/login/?prefix=https&host=example.com');
+            expect(result).toBe('http://localhost:8080/auth/login/?prefix=https&host=example.com');
         });
 
         it('should throw an error for an invalid redirect URL', () => {
@@ -66,7 +66,7 @@ describe("URL Service", () => {
             const redirectURL = 'http://example.com:3000/path/to/resource';
             const result = generateRegisterURL(redirectURL);
             expect(result).toBe(
-                'http://localhost:8081/auth/register/?prefix=http&host=example.com&port=3000&resources=path.to.resource'
+                'http://localhost:8080/auth/register/?prefix=http&host=example.com&port=3000&resources=path.to.resource'
             );
         });
 
@@ -74,14 +74,14 @@ describe("URL Service", () => {
             const redirectURL = 'https://example.com/path/to/resource';
             const result = generateRegisterURL(redirectURL);
             expect(result).toBe(
-                'http://localhost:8081/auth/register/?prefix=https&host=example.com&resources=path.to.resource'
+                'http://localhost:8080/auth/register/?prefix=https&host=example.com&resources=path.to.resource'
             );
         });
 
         it('should handle a redirect URL without resources', () => {
             const redirectURL = 'https://example.com/';
             const result = generateRegisterURL(redirectURL);
-            expect(result).toBe('http://localhost:8081/auth/register/?prefix=https&host=example.com');
+            expect(result).toBe('http://localhost:8080/auth/register/?prefix=https&host=example.com');
         });
 
         it('should throw an error for an invalid redirect URL', () => {

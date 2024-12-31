@@ -7,7 +7,7 @@ import {
 } from "../../sessionService";
 import { fetchData, patchData, deleteData } from "../../api";
 import {AxiosResponse} from "axios";
-import {SESSIONS_URL} from "../../constants";
+import {BASE_URL, SESSIONS_URL} from "../../constants";
 
 jest.mock("../../api");
 
@@ -168,7 +168,7 @@ describe("Session Service", () => {
 
             const result = await revokeSessionsByUserId(userId);
 
-            expect(mockedDeleteData).toHaveBeenCalledWith(`${SESSIONS_URL}/users/${userId}`);
+            expect(mockedDeleteData).toHaveBeenCalledWith(`${BASE_URL}/users/${userId}/sessions`);
             expect(result).toBe(mockResponse);
         });
 

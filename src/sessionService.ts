@@ -1,5 +1,5 @@
 import {deleteData, fetchData, patchData} from "./api";
-import {SESSIONS_URL} from "./constants";
+import {BASE_URL, SESSIONS_URL} from "./constants";
 
 export interface Session {
     id: number;
@@ -46,7 +46,7 @@ export async function revokeSessionById(sessionId: string): Promise<string> {
 
 export async function revokeSessionsByUserId(userId: string): Promise<string> {
     try {
-        const response = await deleteData<string>(`${SESSIONS_URL}/users/${userId}`);
+        const response = await deleteData<string>(`${BASE_URL}/users/${userId}/sessions`);
         return response.data;
     } catch (error) {
         throw new Error(`Error revoking sessions for user with ID: ${userId}`);
