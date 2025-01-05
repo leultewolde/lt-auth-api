@@ -1,6 +1,6 @@
 {
   "name": "lt-auth-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -11,7 +11,13 @@
     "clean": "rm -rf dist",
     "prepare": "husky"
   },
-  "keywords": ["node", "typescript", "sessions", "auth", "url-service"],
+  "keywords": [
+    "node",
+    "typescript",
+    "sessions",
+    "auth",
+    "url-service"
+  ],
   "author": "Leul W. Tewolde <leulwoldegabriel@gmail.com> (https://leultewolde.com)",
   "contributors": [
     "Leul W. Tewolde <leulwoldegabriel@gmail.com> (https://leultewolde.com)"
