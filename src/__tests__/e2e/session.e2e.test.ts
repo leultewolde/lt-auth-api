@@ -1,7 +1,12 @@
-import { getSessionByID, getSessionsByUserID, refreshSession, revokeSessionById, revokeSessionsByUserId } from '../../sessionService';
-import { generateLoginURL, generateRegisterURL } from '../../urlService';
+import {
+    getSessionByID,
+    getSessionsByUserID,
+    refreshSession,
+    revokeSessionById,
+    revokeSessionsByUserId
+} from '../../sessionService';
+import {generateLoginURL, generateRegisterURL} from '../../urlService';
 import axios from 'axios';
-import {SESSIONS_URL} from "../../constants";
 
 const BASE_URL = 'http://localhost:8080'; // Replace with your Spring Boot backend URL
 // axios.defaults.baseURL = BASE_URL;

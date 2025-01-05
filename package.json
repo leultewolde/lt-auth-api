@@ -11,13 +11,27 @@
     "clean": "rm -rf dist",
     "prepare": "husky"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["node", "typescript", "sessions", "auth", "url-service"],
+  "author": "Leul W. Tewolde <leulwoldegabriel@gmail.com> (https://leultewolde.com)",
+  "contributors": [
+    "Leul W. Tewolde <leulwoldegabriel@gmail.com> (https://leultewolde.com)"
+  ],
   "license": "ISC",
   "description": "",
   "dependencies": {
     "axios": "^1.7.9"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leultewolde/lt-auth-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leultewolde/lt-auth-api/issues"
+  },
+  "homepage": "https://github.com/leultewolde/lt-auth-api#readme",
+  "files": [
+    "dist/**/*"
+  ],
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "husky": "^9.1.7",
